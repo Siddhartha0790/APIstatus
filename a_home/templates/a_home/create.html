@@ -1,0 +1,22 @@
+{% extends 'layouts/blank.html' %}
+
+{% block content %} 
+<div class="max-w-4xl mx-auto bg-white p-6 mt-6 rounded-lg shadow-lg">
+    <h2 class="text-xl font-bold mb-4">Add API</h2>
+    <form class="space-y-4" method = 'post'>
+
+        {% csrf_token %}
+        <div>
+            <label class="block font-medium mb-1">API URL</label>
+            <input type="text" name='api' class="w-full p-2 border rounded-lg" placeholder="Enter API URL">
+        </div>
+        <div>
+            <label class="block font-medium mb-1">POST Data (Optional)</label>
+            <textarea name ='text' class="w-full p-2 border rounded-lg" rows="4" placeholder='{"key": "value"}'></textarea>
+        </div>
+        <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600">Submit</button>
+    </form>
+</div>
+
+
+{% endblock %}
