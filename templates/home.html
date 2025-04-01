@@ -10,11 +10,13 @@
             <a href = "{% url 'create' %}"><button class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600" >Create API</button></a>
         </div>
         <ul class="space-y-4">
-            {% for url in allurls%}
+            {% for url1 in allurls%}
+            <a href = '{% url 'detail' url1.id %}'>
             <li class="flex justify-between items-center bg-gray-50 p-4 rounded-lg shadow">
-                <span class="font-medium">{{url.apiurl}}</span>
-                <span class="text-green-600 font-bold">✅ Working</span>
+                <span class="font-medium">{{url1.apiurl}}</span>
+                <span class="text-green-600 font-bold">{{url1.status}}</span>
             </li>
+        </a>
             {% endfor%}
            
         </ul>

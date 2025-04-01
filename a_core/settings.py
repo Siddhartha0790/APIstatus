@@ -44,10 +44,12 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'django_htmx',
+    
 
     # My apps
     'a_home',
     'a_users',
+    'django_celery_beat',
 ]
 
 SITE_ID = 1
@@ -99,7 +101,9 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators

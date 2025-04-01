@@ -1,0 +1,40 @@
+{% extends 'layouts/blank.html' %}
+{% block content %}
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white shadow-lg rounded-lg p-6 w-full max-w-lg">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">API Detail View</h2>
+
+        <!-- API URL -->
+        <p class="text-gray-600"><strong>API URL:</strong> 
+            <span class="text-blue-500">{{myurl.apiurl}}</span>
+        </p>
+
+        <!-- API Status -->
+        <p class="mt-2"><strong>Status:</strong> 
+            <span class="text-green-500">✅ {{myurl.status}}</span> <!-- Change to ❌ Not Working if needed -->
+        </p>
+
+        <!-- API Response -->
+        <div class="mt-4">
+            <h3 class="text-lg font-semibold">Response:</h3>
+            <pre class="bg-gray-200 p-3 rounded text-sm">
+{{response}}
+            </pre>
+        </div>
+
+        <!-- Edit Form -->
+        <div class="mt-4">
+            <h3 class="text-lg font-semibold">Edit Data:</h3>
+            <input type="text" class="w-full p-2 border rounded mt-2" placeholder="New value">
+            <button class="bg-yellow-500 text-white px-4 py-2 mt-2 rounded hover:bg-yellow-600">
+                Edit
+            </button>
+        </div>
+
+        <!-- Delete Button -->
+        <button class="bg-red-500 text-white px-4 py-2 mt-4 rounded hover:bg-red-600">
+            Delete
+        </button>
+    </div>
+</body>
+{% endblock %}
